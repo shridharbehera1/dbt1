@@ -1,0 +1,18 @@
+version: 2
+
+exposures:
+  
+  - name: demo_exposures
+    type: dashboard
+    maturity: high
+    url: https://www.google.com
+    description:
+      Did someone say "exponential growth"?
+
+    depends_on:
+      - source('PUBLIC', 'ORDER_NEW')
+      - source('PUBLIC', 'ORDER_TABLE')
+    
+    owner:
+      name: shridhar
+      email: shridhar.behera@techment.com

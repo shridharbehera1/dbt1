@@ -30,15 +30,9 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 # In this example config, we tell dbt to build all models in the example/ directory
 # as tables. These settingsh.) }}` macro.
-on-run-start: "insert into VWE_S3.DBT_SBEHERA.DBT_AUDITS (AUDIT_TYPE) values ('run start');commit;"
-on-run-end: "insert into VWE_S3.DBT_SBEHERA.DBT_AUDITS (AUDIT_TYPE) values ('run end');commit;"
-
-
-
 models:
-  post-hook: insert into VWE_S3.DBT_SBEHERA.DBT_AUDITS (AUDIT_TYPE) values ('run start');commit;
   +on_schema_change: "sync_all_columns"
   my_new_project:
     # Applies to all files undb
     example:
-      materialized: table
+      materialized: view

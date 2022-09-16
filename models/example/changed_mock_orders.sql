@@ -1,0 +1,1 @@
+select * from  VWE_S3.snapshots.mock_orders

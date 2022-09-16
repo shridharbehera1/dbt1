@@ -1,9 +1,9 @@
 version: 2
-
-version: 2
 sources:
   - name: PUBLIC
     tables:
       - name: ORDER_NEW
       - name: ORDER_TABLE
+      - name: mock_order
+      - name: demo
   
